@@ -11,7 +11,7 @@ server = Session()
 # GUI:
 app = QApplication([])
 text_area = QPlainTextEdit()
-text_area.setFocusPolicy(Qt.NoFocus)
+# text_area.setFocusPolicy(Qt.NoFocus)
 message = QLineEdit()
 layout = QVBoxLayout()
 layout.addWidget(text_area)
@@ -29,7 +29,7 @@ def fetch_new_messages():
             new_messages.append(response)
         sleep(.5)
 
-thread = Thread(target=fetch_new_messages, daemon=True)
+thread = Thread(target=fetch_new_messages, daemon=True)  # 多线程
 thread.start()
 
 def display_new_messages():
